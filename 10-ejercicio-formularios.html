@@ -38,8 +38,8 @@
       <input type="email" id="email" placeholder="juan.perez@correo.com" required />
       <br>
 
-      <label for="Mensaje">Mensaje:</label>
-      <textarea id="Mensaje" placeholder="Escribe tu mensaje."></textarea>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" placeholder="Escribe tu mensaje."></textarea>
       <br>
 
       <button type="submit">Enviar🚀</button>
@@ -48,7 +48,7 @@
 
     <!-- Contenedor del mensaje de configuración (ficticio) -->
 
-    <div id="mensaje" style="display: none;">
+    <div id="mensajeConfirmar" style="display: none;">
       <p>¡Gracias por enviar tus datos, nos comunicaremos contigo pronto! 💖</p>
     </div>
 
@@ -56,6 +56,23 @@
 
       /* Codigo para que funcione el formulario... */
 
+      // Obtener el formulario y el mensaje de confirmación.
+
+      const miFormulario = document.getElementById("formulario");
+
+      const mensajeConfirmacion = document.getElementById("mensajeConfirmar");
+
+      //Vamos a añadir un "escuchador" / "listener" para el "evento"/"event" del botón 
+
+      miFormulario.addEventListener( "submit" , function(event){
+        
+        event.preventDefault();
+
+        miFormulario.style.display = "none";
+
+        mensajeConfirmacion.style.display = "block";
+      
+      })
 
     </script>
 
